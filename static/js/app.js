@@ -88,7 +88,20 @@ function populateGauge(indexLocation) {
 
   var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
 
-  // Generate Needle Here (CALCULATE THE PROPER LINE OFFSET)
+  // Draw the Needle for the Gauge Chart
+  let offsetX1 = 0.5*Math.cos(Math.PI-washCount*Math.PI/9);
+  let offsetY1 = 0.5*Math.sin(Math.PI-washCount*Math.PI/9);
+  layout.shapes = [{
+    type: "line",
+    x0: 0.50,
+    y0: 0.25,
+    x1: 0.50 + offsetX1,
+    y1: 0.25 + offsetY1,
+    line: {
+      color: 'rgba(225,15,25,1.00)',
+      width: 10
+    }
+  }]
 
   Plotly.newPlot('gauge', data, layout);
 }
