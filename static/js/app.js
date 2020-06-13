@@ -56,9 +56,8 @@ function populateBarChart(indexLocation) {
   Plotly.newPlot("bar", data, layout)
 }
 
-// Update the gauge
+// Populate Gauge Chart
 function populateGauge(indexLocation) {
-  // Collect the data
   let washCount = Math.round(sampleData.metadata[indexLocation].wfreq);
 
   var data = [
@@ -89,7 +88,7 @@ function populateGauge(indexLocation) {
 
   var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
 
-  // Generate Needle
+  // Generate Needle Here (CALCULATE THE PROPER LINE OFFSET)
 
   Plotly.newPlot('gauge', data, layout);
 }
