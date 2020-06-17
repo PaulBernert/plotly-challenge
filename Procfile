@@ -1,1 +1,1 @@
-web: gunicorn plotly-challenge.app:app
+web: gunicorn plotly_challenge.app:app
