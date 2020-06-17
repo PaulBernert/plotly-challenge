@@ -72,15 +72,15 @@ function populateGauge(indexLocation) {
         bar: {color: "rgba(0,0,0,1.0)"},
         steps: [
           // RGBA values collected from MS Paint dropper tool
-          { range: [0, 1], color: "rgba( 248,243,236,1.00)" },
-          { range: [1, 2], color: "rgba( 244,241,229,1.00)" },
-          { range: [2, 3], color: "rgba( 233,230,202,1.00)" },
-          { range: [3, 4], color: "rgba( 229,231,179,1.00)" },
-          { range: [4, 5], color: "rgba( 213,228,157,1.00)" },
-          { range: [5, 6], color: "rgba( 183,204,146,1.00)" },
-          { range: [6, 7], color: "rgba( 140,191,136,1.00)" },
-          { range: [7, 8], color: "rgba( 138,187,143,1.00)" },
-          { range: [8, 9], color: "rgba( 133,180,138,1.00)" }
+          { range: [0, 1], color: "rgba(248,243,236,1.00)" },
+          { range: [1, 2], color: "rgba(244,241,229,1.00)" },
+          { range: [2, 3], color: "rgba(233,230,202,1.00)" },
+          { range: [3, 4], color: "rgba(229,231,179,1.00)" },
+          { range: [4, 5], color: "rgba(213,228,157,1.00)" },
+          { range: [5, 6], color: "rgba(183,204,146,1.00)" },
+          { range: [6, 7], color: "rgba(140,191,136,1.00)" },
+          { range: [7, 8], color: "rgba(138,187,143,1.00)" },
+          { range: [8, 9], color: "rgba(133,180,138,1.00)" }
         ],
       }
     }
@@ -89,6 +89,8 @@ function populateGauge(indexLocation) {
   var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
 
   // Draw the Needle for the Gauge Chart
+  // Thanks to Vincent Heningburgh (@GabrielUSMC) for
+  // the offsetX1 and offsetY1 equations.
   let offsetX1 = 0.5*Math.cos(Math.PI-washCount*Math.PI/9);
   let offsetY1 = 0.5*Math.sin(Math.PI-washCount*Math.PI/9);
   layout.shapes = [{
